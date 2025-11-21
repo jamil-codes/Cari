@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARI - Boutique Beach Weddings & Events | Georgian Bay</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables for Colors */
+        :root {
+            --soft-blue: #e6f2ff;
+            --pastel-blue: #b3d9ff;
+            --navy: #003366;
+            --white: #ffffff;
+            --light-pastel: #f0f8ff;
+            --sand: #f5f5dc;
+        }
+
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 300;
+            color: #333;
+            line-height: 1.6;
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background-color: var(--pastel-blue);
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--navy);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 2px solid var(--navy);
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--navy);
+        }
+
+        .btn-light {
+            background-color: transparent;
+            color: var(--navy);
+            border: 2px solid var(--navy);
+        }
+
+        .btn-light:hover {
+            background-color: var(--navy);
+            color: var(--white);
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            padding: 20px 0;
+        }
+
+        header.scrolled {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 10px 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--navy);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--pastel-blue);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav li {
+            margin-left: 30px;
+        }
+
+        nav a {
+            color: var(--navy);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--pastel-blue);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--navy);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1519677100203-a0e668c92439?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(230, 242, 255, 0.6), rgba(179, 217, 255, 0.4));
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            color: var(--navy);
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+        }
+
+        /* Introduction Section */
+        .intro {
+            background-color: var(--light-pastel);
+            text-align: center;
+        }
+
+        .intro h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .intro p {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+        }
+
+        .intro-features {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .feature {
+            flex: 1;
+            min-width: 200px;
+            max-width: 250px;
+            padding: 30px 20px;
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--pastel-blue);
+        }
+
+        .feature h3 {
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        /* Experience Section */
+        .experience {
+            position: relative;
+            background-color: var(--white);
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .experience-item {
+            position: relative;
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .experience-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .experience-item:hover .experience-img {
+            transform: scale(1.05);
+        }
+
+        .experience-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 30px;
+            background: linear-gradient(transparent, rgba(0, 51, 102, 0.8));
+            color: var(--white);
+        }
+
+        .experience-overlay h3 {
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        /* Venue Features Section */
+        .features {
+            background-color: var(--soft-blue);
+        }
+
+        .features h2 {
+            text-align: center;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .feature-icon-small {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--pastel-blue);
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding-bottom: 100px;
+        }
+
+        .gallery h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            height: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.05);
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: var(--light-pastel);
+            text-align: center;
+        }
+
+        .contact h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact p {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--navy);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--pastel-blue);
+            outline: none;
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--navy);
+            color: var(--white);
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .footer-column p, 
+        .footer-column a {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column a:hover {
+            color: var(--pastel-blue);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--pastel-blue);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 3rem;
+            }
+            
+            h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                width: 80%;
+                height: calc(100vh - 70px);
+                background-color: var(--white);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 50px;
+                transition: right 0.3s ease;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            }
+            
+            nav ul.active {
+                right: 0;
+            }
+            
+            nav li {
+                margin: 0 0 30px 0;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .hero-btns .btn {
+                margin-bottom: 10px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .experience-item {
+                height: 300px;
+            }
+            
+            .gallery-item {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="#" class="logo">CARI<span>.</span></a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#features">Venue Features</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Boutique Beach Weddings & Events</h1>
+                <p>An intimate waterfront retreat on Georgian Bay's private three-tier beach. Where moments become memories.</p>
+                <div class="hero-btns">
+                    <a href="#contact" class="btn">Inquire Now</a>
+                    <a href="#gallery" class="btn btn-light">View Gallery</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="intro" id="about">
+        <div class="container">
+            <h2>Welcome to CARI</h2>
+            <p>CARI is a boutique beachfront wedding and event retreat located on a private three-tier beach at the Sunport Beach Club on Georgian Bay. Our intimate venue offers a romantic coastal setting for your most cherished celebrations.</p>
+            <div class="intro-features">
+                <div class="feature">
+                    <div class="feature-icon">🏖️</div>
+                    <h3>Private Beach</h3>
+                    <p>Exclusive access to our three-tier beachfront</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">💍</div>
+                    <h3>Weddings</h3>
+                    <p>Intimate ceremonies and receptions</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🏄</div>
+                    <h3>Activities</h3>
+                    <p>Water sports and beach amenities</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🌅</div>
+                    <h3>Seasonal</h3>
+                    <p>Available June & September only</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience" id="experience">
+        <div class="container">
+            <h2>Our Experiences</h2>
+            <div class="experience-grid">
+                <div class="experience-item">
+                    <img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2VkZGluZ3xlbnwwfHwwfHx8MA%3D%3D" alt="Wedding at CARI" class="experience-img">
+                    <div class="experience-overlay">
+                        <h3>Weddings</h3>
+                        <p>Intimate beachfront ceremonies and receptions</p>
+                    </div>
+                </div>
+                <div class="experience-item">
+                    <img src="https://images.unsplash.com/photo-1532634922-8fe0b757fb13?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Celebration at CARI" class="experience-img">
+                    <div class="experience-overlay">
+                        <h3>Celebrations</h3>
+                        <p>Memorable gatherings with loved ones</p>
+                    </div>
+                </div>
+                <div class="experience-item">
+                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Corporate Retreat at CARI" class="experience-img">
+                    <div class="experience-overlay">
+                        <h3>Corporate Retreats</h3>
+                        <p>Inspiring settings for business events</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Venue Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2>Venue Features</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon-small">🏖️</div>
+                    <h3>Private Beach</h3>
+                    <p>Three-tier beachfront exclusively for your event</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon-small">🍹</div>
+                    <h3>Tiki Bar</h3>
+                    <p>Beachside cocktails and refreshments</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon-small">🛶</div>
+                    <h3>Water Sports</h3>
+                    <p>Paddleboards, kayaks and more</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon-small">🏕️</div>
+                    <h3>Beach Amenities</h3>
+                    <p>Beach beds, umbrellas and fire pit</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon-small">🧗</div>
+                    <h3>Activities</h3>
+                    <p>Climbing wall, slack line, ping pong</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon-small">🏨</div>
+                    <h3>Accommodations</h3>
+                    <p>On-site lodging for guests</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2>Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1519677100203-a0e668c92439?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Beach wedding setup" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Beach ceremony" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1464207687429-7505649dae38?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Tiki bar" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Beach activities" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Beachfront property" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1576836165612-8bc9b07e7778?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Fire pit at night" class="gallery-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p>Interested in hosting your event at CARI? Contact us to check availability and learn more about our packages.</p>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="event-type">Event Type</label>
+                    <select id="event-type" name="event-type">
+                        <option value="">Select Event Type</option>
+                        <option value="wedding">Wedding</option>
+                        <option value="celebration">Celebration</option>
+                        <option value="corporate">Corporate Retreat</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="date">Preferred Date</label>
+                    <input type="month" id="date" name="date">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Tell us about your event..."></textarea>
+                </div>
+                <button type="submit" class="btn">Send Inquiry</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>CARI</h3>
+                    <p>Boutique beachfront wedding and event retreat located on Georgian Bay's private three-tier beach.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Pinterest">📌</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#features">Venue Features</a>
+                    <a href="#gallery">Gallery</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <p>Sunport Beach Club</p>
+                    <p>Georgian Bay, Ontario</p>
+                    <p>Canada</p>
+                    <p>info@cariretreat.com</p>
+                    <p>+1 (555) 123-4567</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Availability</h3>
+                    <p>Open for events in June & September only</p>
+                    <p>Bookings available for 2024 & 2025</p>
+                    <a href="#contact" class="btn btn-light" style="margin-top: 15px;">Check Availability</a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 CARI Boutique Beach Weddings & Events. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Form submission
+        const contactForm = document.querySelector('.contact-form');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your inquiry! We will get back to you soon.');
+            contactForm.reset();
+        });
+    </script>
+</body>
+</html>
