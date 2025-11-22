@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CARI - Boutique Beach Weddings & Events | Georgian Bay</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Open+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet">
     <style>
         /* CSS Variables for Colors */
         :root {
@@ -39,7 +41,12 @@
             overflow-x: hidden;
         }
 
-        h1, h2, h3, h4, h5, h6 {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             font-family: 'Playfair Display', serif;
             font-weight: 500;
             color: var(--navy);
@@ -132,6 +139,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: relative;
         }
 
         .logo {
@@ -463,7 +471,7 @@
             font-size: 1.3rem;
         }
 
-        .footer-column p, 
+        .footer-column p,
         .footer-column a {
             color: rgba(255, 255, 255, 0.8);
             margin-bottom: 10px;
@@ -510,7 +518,7 @@
             h1 {
                 font-size: 3rem;
             }
-            
+
             h2 {
                 font-size: 2.2rem;
             }
@@ -519,72 +527,78 @@
         @media (max-width: 768px) {
             .mobile-menu-btn {
                 display: block;
+                position: absolute;
+                right: 0;
             }
-            
+
             nav ul {
                 position: fixed;
-                top: 70px;
+                top: 0px;
+                z-index: -1;
                 right: -100%;
-                width: 80%;
+                width: 100%;
                 height: calc(100vh - 70px);
-                background-color: var(--white);
+                background-color: #fff6;
+                backdrop-filter: blur(8px);
                 flex-direction: column;
                 align-items: center;
                 justify-content: flex-start;
-                padding-top: 50px;
+                padding-top: 100px;
                 transition: right 0.3s ease;
                 box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
             }
-            
+
             nav ul.active {
                 right: 0;
             }
-            
+
             nav li {
                 margin: 0 0 30px 0;
             }
-            
+
             h1 {
                 font-size: 2.5rem;
             }
-            
+
             h2 {
                 font-size: 2rem;
             }
-            
+
             .hero-btns {
                 flex-direction: column;
                 align-items: flex-start;
             }
-            
+
             .hero-btns .btn {
                 margin-bottom: 10px;
             }
+
         }
 
         @media (max-width: 576px) {
             h1 {
                 font-size: 2rem;
             }
-            
+
             h2 {
                 font-size: 1.8rem;
             }
-            
+
             section {
                 padding: 60px 0;
             }
-            
+
             .experience-item {
                 height: 300px;
             }
-            
+
             .gallery-item {
                 height: 250px;
             }
         }
     </style>
 </head>
+
 <body>
     <!-- Header -->
     <header id="header">
@@ -611,7 +625,8 @@
         <div class="container">
             <div class="hero-content">
                 <h1>Boutique Beach Weddings & Events</h1>
-                <p>An intimate waterfront retreat on Georgian Bay's private three-tier beach. Where moments become memories.</p>
+                <p>An intimate waterfront retreat on Georgian Bay's private three-tier beach. Where moments become
+                    memories.</p>
                 <div class="hero-btns">
                     <a href="#contact" class="btn">Inquire Now</a>
                     <a href="#gallery" class="btn btn-light">View Gallery</a>
@@ -624,7 +639,9 @@
     <section class="intro" id="about">
         <div class="container">
             <h2>Welcome to CARI</h2>
-            <p>CARI is a boutique beachfront wedding and event retreat located on a private three-tier beach at the Sunport Beach Club on Georgian Bay. Our intimate venue offers a romantic coastal setting for your most cherished celebrations.</p>
+            <p>CARI is a boutique beachfront wedding and event retreat located on a private three-tier beach at the
+                Sunport Beach Club on Georgian Bay. Our intimate venue offers a romantic coastal setting for your most
+                cherished celebrations.</p>
             <div class="intro-features">
                 <div class="feature">
                     <div class="feature-icon">🏖️</div>
@@ -656,21 +673,24 @@
             <h2>Our Experiences</h2>
             <div class="experience-grid">
                 <div class="experience-item">
-                    <img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2VkZGluZ3xlbnwwfHwwfHx8MA%3D%3D" alt="Wedding at CARI" class="experience-img">
+                    <img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2VkZGluZ3xlbnwwfHwwfHx8MA%3D%3D"
+                        alt="Wedding at CARI" class="experience-img">
                     <div class="experience-overlay">
                         <h3>Weddings</h3>
                         <p>Intimate beachfront ceremonies and receptions</p>
                     </div>
                 </div>
                 <div class="experience-item">
-                    <img src="https://images.unsplash.com/photo-1532634922-8fe0b757fb13?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Celebration at CARI" class="experience-img">
+                    <img src="https://images.unsplash.com/photo-1532634922-8fe0b757fb13?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                        alt="Celebration at CARI" class="experience-img">
                     <div class="experience-overlay">
                         <h3>Celebrations</h3>
                         <p>Memorable gatherings with loved ones</p>
                     </div>
                 </div>
                 <div class="experience-item">
-                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Corporate Retreat at CARI" class="experience-img">
+                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                        alt="Corporate Retreat at CARI" class="experience-img">
                     <div class="experience-overlay">
                         <h3>Corporate Retreats</h3>
                         <p>Inspiring settings for business events</p>
@@ -725,22 +745,28 @@
             <h2>Gallery</h2>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1519677100203-a0e668c92439?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Beach wedding setup" class="gallery-img">
+                    <img src="https://images.unsplash.com/photo-1519677100203-a0e668c92439?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                        alt="Beach wedding setup" class="gallery-img">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Beach ceremony" class="gallery-img">
+                    <img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                        alt="Beach ceremony" class="gallery-img">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1464207687429-7505649dae38?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Tiki bar" class="gallery-img">
+                    <img src="https://images.unsplash.com/photo-1464207687429-7505649dae38?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                        alt="Tiki bar" class="gallery-img">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Beach activities" class="gallery-img">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                        alt="Beach activities" class="gallery-img">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Beachfront property" class="gallery-img">
+                    <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                        alt="Beachfront property" class="gallery-img">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1576836165612-8bc9b07e7778?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Fire pit at night" class="gallery-img">
+                    <img src="https://images.unsplash.com/photo-1576836165612-8bc9b07e7778?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                        alt="Fire pit at night" class="gallery-img">
                 </div>
             </div>
         </div>
@@ -750,7 +776,8 @@
     <section class="contact" id="contact">
         <div class="container">
             <h2>Get In Touch</h2>
-            <p>Interested in hosting your event at CARI? Contact us to check availability and learn more about our packages.</p>
+            <p>Interested in hosting your event at CARI? Contact us to check availability and learn more about our
+                packages.</p>
             <form class="contact-form">
                 <div class="form-group">
                     <label for="name">Full Name</label>
@@ -789,7 +816,8 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>CARI</h3>
-                    <p>Boutique beachfront wedding and event retreat located on Georgian Bay's private three-tier beach.</p>
+                    <p>Boutique beachfront wedding and event retreat located on Georgian Bay's private three-tier beach.
+                    </p>
                     <div class="social-links">
                         <a href="#" aria-label="Instagram">📷</a>
                         <a href="#" aria-label="Facebook">📘</a>
@@ -830,11 +858,11 @@
         // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const navMenu = document.getElementById('navMenu');
-        
+
         mobileMenuBtn.addEventListener('click', () => {
             navMenu.classList.toggle('active');
         });
-        
+
         // Close mobile menu when clicking on a link
         const navLinks = document.querySelectorAll('nav a');
         navLinks.forEach(link => {
@@ -842,7 +870,7 @@
                 navMenu.classList.remove('active');
             });
         });
-        
+
         // Header scroll effect
         const header = document.getElementById('header');
         window.addEventListener('scroll', () => {
@@ -852,7 +880,7 @@
                 header.classList.remove('scrolled');
             }
         });
-        
+
         // Form submission
         const contactForm = document.querySelector('.contact-form');
         contactForm.addEventListener('submit', (e) => {
@@ -862,4 +890,5 @@
         });
     </script>
 </body>
+
 </html>
